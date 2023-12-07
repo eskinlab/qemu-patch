@@ -1,4 +1,4 @@
-From f5e7bd16f64f19e26a80d989122940d69cb8f278 Mon Sep 17 00:00:00 2001
+From 2efb601958ca5fefa375535bd7dcccb30563c2ef Mon Sep 17 00:00:00 2001
 From: root <you@example.com>
 Date: Thu, 7 Dec 2023 09:07:34 +0200
 Subject: [PATCH] Added monitoring command fizzbuzz
@@ -6,9 +6,9 @@ Subject: [PATCH] Added monitoring command fizzbuzz
 ---
  hmp-commands-info.hx | 13 +++++++++++++
  monitor/hmp-cmds.c   | 11 +++++++++++
- monitor/qmp-cmds.c   | 38 ++++++++++++++++++++++++++++++++++++++
+ monitor/qmp-cmds.c   | 37 +++++++++++++++++++++++++++++++++++++
  qapi/misc.json       | 17 +++++++++++++++++
- 4 files changed, 79 insertions(+)
+ 4 files changed, 78 insertions(+)
 
 diff --git a/hmp-commands-info.hx b/hmp-commands-info.hx
 index f5b37eb..cfbf7f1 100644
@@ -57,17 +57,16 @@ index 871898a..3b77d68 100644
  {
      NameInfo *info;
 diff --git a/monitor/qmp-cmds.c b/monitor/qmp-cmds.c
-index b0f948d..169ded6 100644
+index b0f948d..e346680 100644
 --- a/monitor/qmp-cmds.c
 +++ b/monitor/qmp-cmds.c
-@@ -41,6 +41,44 @@ NameInfo *qmp_query_name(Error **errp)
+@@ -41,6 +41,43 @@ NameInfo *qmp_query_name(Error **errp)
      return info;
  }
  
 +bool isNumeric(const char *str): 
 +{
-+    while(*str != '\0')
-+    {
++    while(*str != '\0') {
 +        if(*str < '0' || *str > '9')
 +            return false;
 +        str++;
